@@ -14,86 +14,88 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Header -->
   <header class="fixed w-full top-0 z-50 bg-white shadow-lg">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative">
-      <a href="#home" class="flex items-center">
-        <img src="/logo.png" alt="Pressure Perfect - Apex Driveway Cleaning" class="h-16 w-auto hover:opacity-90 transition-opacity duration-300" />
-      </a>
-      
-      <!-- Desktop Navigation -->
-      <div class="hidden lg:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
-        <a href="#home" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-          </svg>
-          <span>Home</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+    <div class="max-w-7xl mx-auto">
+      <nav class="flex justify-between items-center px-4 py-4">
+        <a href="#home" class="flex items-center">
+          <img src="/logo.png" alt="Pressure Perfect - Apex Driveway Cleaning" class="h-10 lg:h-16 w-auto hover:opacity-90 transition-opacity duration-300" />
         </a>
-        <a href="#services" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2c0 0-6 6-6 10a6 6 0 1012 0c0-4-6-10-6-10z"/>
-          </svg>
-          <span>Services</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <a href="#home" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <span>Home</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#services" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2c0 0-6 6-6 10a6 6 0 1012 0c0-4-6-10-6-10z"/>
+            </svg>
+            <span>Services</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#gallery" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+            </svg>
+            <span>Gallery</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#about" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <span>About</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#pricing" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+            </svg>
+            <span>Pricing</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#contact" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>Contact</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+        
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden lg:block bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline btn-hover">
+          Get Free Quote
         </a>
-        <a href="#gallery" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+        
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-[#2E9BC7]/20 hover:bg-[#2E9BC7]/5 hover:border-[#2E9BC7]/40 transition-all duration-300 shadow-sm">
+          <svg id="hamburger-icon" class="w-5 h-5 text-[#2E9BC7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <span>Gallery</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#about" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          <svg id="close-icon" class="w-5 h-5 text-[#2E9BC7] hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-          <span>About</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#pricing" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
-          </svg>
-          <span>Pricing</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#contact" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-          </svg>
-          <span>Contact</span>
-          <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-      </div>
-      
-      <!-- Desktop CTA -->
-      <a href="#contact" class="hidden lg:block bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline btn-hover">
-        Get Free Quote
-      </a>
-      
-      <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-        <svg id="hamburger-icon" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <svg id="close-icon" class="w-6 h-6 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </nav>
+        </button>
+      </nav>
+    </div>
     
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 hidden">
-      <div class="container mx-auto px-4 py-6">
-        <div class="flex flex-col space-y-4">
-          <a href="#home" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Home</a>
-          <a href="#services" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Services</a>
-          <a href="#gallery" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Gallery</a>
-          <a href="#about" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">About</a>
-          <a href="#pricing" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Pricing</a>
-          <a href="#contact" class="text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Contact</a>
-          <a href="#contact" class="bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline btn-hover text-center mt-4 block">
+    <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 hidden w-full">
+      <div class="px-4 py-6">
+        <div class="space-y-4">
+          <a href="#home" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Home</a>
+          <a href="#services" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Services</a>
+          <a href="#gallery" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Gallery</a>
+          <a href="#about" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">About</a>
+          <a href="#pricing" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Pricing</a>
+          <a href="#contact" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Contact</a>
+          <a href="#contact" class="block bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline text-center mt-4">
             Get Free Quote
           </a>
         </div>
@@ -310,6 +312,67 @@ import Layout from '../layouts/Layout.astro';
       width: 100% !important;
     }
     
+    /* Mobile responsive padding */
+    @media (max-width: 640px) {
+      section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      /* Fix header to be full width on mobile */
+      header {
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        width: calc(100% + 2rem) !important;
+      }
+      
+      /* Ensure hamburger button has proper spacing */
+      #mobile-menu-toggle {
+        margin-right: 1rem !important;
+      }
+      
+      /* Center hero and footer content on mobile */
+      #home,
+      footer {
+        text-align: center !important;
+      }
+      
+      #home .relative.z-10,
+      footer .container {
+        text-align: center !important;
+      }
+      
+      /* Center footer navigation links and content */
+      footer .flex,
+      footer .space-x-6,
+      footer div,
+      footer p,
+      footer a {
+        justify-content: center !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+      
+      /* Center footer flex containers */
+      footer .flex.justify-between {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+      }
+      
+      /* Fix pricing grid on mobile */
+      #pricing .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+    }
+    
   </style>
 
   <!-- Hero Section -->
@@ -337,7 +400,7 @@ import Layout from '../layouts/Layout.astro';
           Reliable driveway cleaning services by local high school students Mateo & Alex. Honest work, fair prices, and a commitment to making Apex neighborhoods shine.
         </p>
         <p class="text-base md:text-lg mb-10 leading-relaxed text-gray-300 max-w-xl">
-          Proudly serving Bella Casa, Abbington, Scott's Mill, Haddon Hall & all Apex area neighborhoods.
+          Proudly serving ALL neighborhoods in Apex, including Bella Casa, Abbington, Scott's Mill, Haddon Hall & downtown.
         </p>
         
         <!-- CTA Button -->
@@ -375,7 +438,7 @@ import Layout from '../layouts/Layout.astro';
           Our <span class="text-gradient">Services</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We provide reliable concrete cleaning services to keep your driveway looking its best.
+          We provide consistent and reliable concrete and stone restoration services to keep your property looking its best.
         </p>
       </div>
       
@@ -390,7 +453,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-gray-600 mb-4">Concrete, stone, and paver driveways. We remove dirt, algae, and everyday buildup to restore your driveway's appearance.</p>
           <ul class="text-sm text-gray-500 space-y-2">
             <li>Concrete Driveways</li>
-            <li>Oil Stain Removal</li>
+            <li>Seasonal Algae Removal</li>
             <li>Stone & Paver Surfaces</li>
             <li>Surface Restoration</li>
           </ul>
@@ -638,7 +701,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Apex Neighborhoods -->
         <div class="space-y-6">
           <div>
-            <h3 class="text-2xl font-display font-bold text-gray-800 mb-2">Apex Neighborhoods We Serve</h3>
+            <h3 class="text-2xl font-display font-bold text-gray-800 mb-2">A Few Neighborhoods We Serve</h3>
             <p class="text-gray-600 mb-8">Local expertise in your neighborhood with personalized service</p>
             
             <!-- Neighborhood Grid -->
@@ -878,7 +941,7 @@ import Layout from '../layouts/Layout.astro';
               </li>
             </ul>
           </div>
-          <p class="text-sm text-gray-500 mt-6 italic">
+          <p class="text-base text-gray-500 mt-6 italic">
             *Final pricing based on actual measurements and surface condition
           </p>
         </div>
