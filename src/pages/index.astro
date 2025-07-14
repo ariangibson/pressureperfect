@@ -16,8 +16,11 @@ import Layout from '../layouts/Layout.astro';
   <header class="fixed w-full top-0 z-50 bg-white shadow-lg">
     <div class="max-w-7xl mx-auto">
       <nav class="flex justify-between items-center px-4 py-4">
+        <!-- Invisible spacer for mobile centering -->
+        <div class="lg:hidden" style="width: 2.5rem; height: 2.75rem;"></div>
+        
         <a href="#home" class="flex items-center">
-          <img src="/logo.png" alt="Pressure Perfect - Apex Driveway Cleaning" class="h-10 lg:h-16 w-auto hover:opacity-90 transition-opacity duration-300" />
+          <img src="/logo.png" alt="Pressure Perfect - Apex Driveway Cleaning" class="h-16 w-auto hover:opacity-90 transition-opacity duration-300" />
         </a>
         
         <!-- Desktop Navigation -->
@@ -183,6 +186,32 @@ import Layout from '../layouts/Layout.astro';
           mobileMenu.classList.add('hidden');
           hamburgerIcon.classList.remove('hidden');
           closeIcon.classList.add('hidden');
+        }
+      });
+      
+      // Make all "Get Free Quote" buttons scroll directly to the form
+      const quoteButtons = document.querySelectorAll('a[href="#contact"]');
+      quoteButtons.forEach(button => {
+        // Skip only the Contact navigation link (not all nav/menu buttons)
+        const isContactNavLink = button.textContent.trim() === 'Contact' || 
+                                 button.querySelector('span')?.textContent.trim() === 'Contact';
+        
+        if (!isContactNavLink) {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const form = document.getElementById('quote-form');
+            if (form) {
+              // Add a small delay to ensure page layout is settled
+              setTimeout(() => {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Focus on the first input field
+                setTimeout(() => {
+                  const firstInput = form.querySelector('input, textarea');
+                  if (firstInput) firstInput.focus();
+                }, 300);
+              }, 100);
+            }
+          });
         }
       });
     });
@@ -385,6 +414,7 @@ import Layout from '../layouts/Layout.astro';
         margin-right: 1rem !important;
       }
       
+      
       /* Center hero and footer content on mobile */
       #home,
       footer {
@@ -414,24 +444,80 @@ import Layout from '../layouts/Layout.astro';
         gap: 1rem !important;
       }
       
-      /* Fix pricing grid on mobile */
+      /* Fix pricing grid on mobile only (not tablet) */
       #pricing .grid {
         display: flex !important;
         flex-direction: column !important;
         gap: 2rem !important;
       }
-      
-      /* Disable iOS Safari phone number styling */
-      a[href^="tel:"] {
-        color: inherit !important;
-        text-decoration: none !important;
-        background: none !important;
-        border: none !important;
-        padding: 0 !important;
-        font-size: inherit !important;
-        font-weight: inherit !important;
-        font-family: inherit !important;
+    }
+    
+    /* Reset pricing grid for tablet and up */
+    @media (min-width: 768px) {
+      #pricing .grid {
+        display: grid !important;
+        flex-direction: initial !important;
+        gap: 2rem !important;
       }
+    }
+    
+    /* Pricing text visibility control */
+    .pricing-text-desktop {
+      display: none;
+    }
+    
+    .pricing-text-mobile {
+      display: block;
+    }
+    
+    @media (min-width: 1100px) {
+      .pricing-text-desktop {
+        display: block;
+      }
+      
+      .pricing-text-mobile {
+        display: none;
+      }
+    }
+
+    /* Hide side modules and show only "Most Popular" for screens under 1100px */
+    @media (max-width: 1099px) {
+      #pricing .grid {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0 !important;
+      }
+      
+      /* Hide first and third pricing modules */
+      #pricing .grid > div:nth-child(1),
+      #pricing .grid > div:nth-child(3) {
+        display: none !important;
+      }
+      
+      /* Show only the middle module */
+      #pricing .grid > div:nth-child(2) {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 !important;
+      }
+      
+      /* Hide the "Most Popular" badge on smaller screens */
+      #pricing .grid > div:nth-child(2) .absolute.-top-4 {
+        display: none !important;
+      }
+    }
+    
+    /* Disable iOS Safari phone number styling - moved outside media query */
+    a[href^="tel:"] {
+      color: inherit !important;
+      text-decoration: none !important;
+      background: none !important;
+      border: none !important;
+      padding: 0 !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      font-family: inherit !important;
     }
     
   </style>
@@ -837,7 +923,8 @@ import Layout from '../layouts/Layout.astro';
           Example <span class="text-gradient">Pricing</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Sample pricing for common driveway sizes. Every job is different - contact us for your specific quote.
+          <span class="pricing-text-desktop">Sample pricing for common driveway sizes. Every job is different - contact us for your specific quote.</span>
+          <span class="pricing-text-mobile">Sample price point for a typical medium-sized project. Every job is different - please contact us for a personalized quote based on your property.</span>
         </p>
       </div>
       
@@ -877,7 +964,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Medium Driveway -->
-        <div class="bg-white p-6 relative border-4 border-pressure-purple flex flex-col h-full card-enhanced">
+        <div class="bg-white p-6 relative border border-[#2E9BC7]/20 rounded-xl flex flex-col h-full card-enhanced shadow-xl ring-2 ring-[#2E9BC7]/10">
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span class="bg-[#2ea4d3] text-white px-6 py-2 rounded-full text-base font-semibold">
               Most Popular
