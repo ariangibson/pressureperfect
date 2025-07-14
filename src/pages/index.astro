@@ -88,16 +88,65 @@ import Layout from '../layouts/Layout.astro';
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 hidden w-full">
       <div class="px-4 py-6">
-        <div class="space-y-4">
-          <a href="#home" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Home</a>
-          <a href="#services" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Services</a>
-          <a href="#gallery" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Gallery</a>
-          <a href="#about" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">About</a>
-          <a href="#pricing" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Pricing</a>
-          <a href="#contact" class="block text-gray-700 hover:text-pressure-primary transition-colors font-medium py-2 border-b border-gray-100">Contact</a>
-          <a href="#contact" class="block bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline text-center mt-4">
-            Get Free Quote
+        <div class="space-y-0">
+          <a href="#home" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <span>Home</span>
           </a>
+          <div class="flex justify-center py-2">
+            <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-[#2E9BC7]/20 to-transparent"></div>
+          </div>
+          <a href="#services" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2c0 0-6 6-6 10a6 6 0 1012 0c0-4-6-10-6-10z"/>
+            </svg>
+            <span>Services</span>
+          </a>
+          <div class="flex justify-center py-2">
+            <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-[#2E9BC7]/20 to-transparent"></div>
+          </div>
+          <a href="#gallery" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+            </svg>
+            <span>Gallery</span>
+          </a>
+          <div class="flex justify-center py-2">
+            <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-[#2E9BC7]/20 to-transparent"></div>
+          </div>
+          <a href="#about" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <span>About</span>
+          </a>
+          <div class="flex justify-center py-2">
+            <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-[#2E9BC7]/20 to-transparent"></div>
+          </div>
+          <a href="#pricing" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+            </svg>
+            <span>Pricing</span>
+          </a>
+          <div class="flex justify-center py-2">
+            <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-[#2E9BC7]/20 to-transparent"></div>
+          </div>
+          <a href="#contact" class="flex items-center justify-center space-x-3 text-[#374151] hover:text-[#2E9BC7] transition-colors font-semibold py-3 no-underline">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>Contact</span>
+          </a>
+          <div class="flex justify-center mt-6">
+            <a href="#contact" class="bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline transition-colors duration-300">
+              Get Free Quote
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -370,6 +419,18 @@ import Layout from '../layouts/Layout.astro';
         display: flex !important;
         flex-direction: column !important;
         gap: 2rem !important;
+      }
+      
+      /* Disable iOS Safari phone number styling */
+      a[href^="tel:"] {
+        color: inherit !important;
+        text-decoration: none !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        font-family: inherit !important;
       }
     }
     
@@ -676,7 +737,7 @@ import Layout from '../layouts/Layout.astro';
               </iframe>
             </div>
             <div class="mt-6 text-center bg-gradient-to-r from-pressure-primary/5 to-pressure-purple/5 rounded-lg p-3">
-              <p class="text-sm font-medium text-gray-700">📍 Local Nighborhood Service in and Around Apex, NC</p>
+              <p class="text-sm font-medium text-gray-700">📍 Local Neighborhood Service in and Around Apex, NC</p>
             </div>
           </div>
           
