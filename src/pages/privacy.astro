@@ -1,0 +1,321 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Privacy Policy - Pressure Perfect | Apex, NC"
+  description="Privacy policy for Pressure Perfect driveway cleaning services in Apex, NC. Learn how we protect your information."
+  keywords="privacy policy, Pressure Perfect, Apex driveway cleaning, data protection"
+>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto">
+      <nav class="flex justify-between items-center px-4 py-4">
+        <!-- Invisible spacer for mobile centering -->
+        <div class="lg:hidden" style="width: 2.5rem; height: 2.75rem;"></div>
+        
+        <a href="/" class="flex items-center">
+          <img src="/logo.png" alt="Pressure Perfect - Apex Driveway Cleaning" class="h-16 w-auto hover:opacity-90 transition-opacity duration-300" />
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex space-x-4 xl:space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <a href="/#home" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <span>Home</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          
+          <a href="/#services" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+            </svg>
+            <span>Services</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          
+          <a href="/#contact" class="relative text-[#374151] hover:text-[#2E9BC7] transition-all duration-300 font-semibold py-2 group no-underline flex items-center space-x-2" style="letter-spacing: 0.5px;">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>Contact</span>
+            <span class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E9BC7] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+        
+        <!-- Get Free Quote Button (Desktop) -->
+        <a href="/#contact" class="hidden lg:block bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline btn-hover">
+          Get Free Quote
+        </a>
+        
+        <!-- Mobile menu button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-[#374151] hover:text-[#2E9BC7] transition-colors duration-300">
+            <svg id="hamburger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200 px-4 py-6">
+        <div class="flex flex-col space-y-4">
+          <a href="/#home" class="text-[#374151] hover:text-[#2E9BC7] transition-colors duration-300 font-semibold py-2 flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            <span>Home</span>
+          </a>
+          
+          <a href="/#services" class="text-[#374151] hover:text-[#2E9BC7] transition-colors duration-300 font-semibold py-2 flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+            </svg>
+            <span>Services</span>
+          </a>
+          
+          <a href="/#contact" class="text-[#374151] hover:text-[#2E9BC7] transition-colors duration-300 font-semibold py-2 flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>Contact</span>
+          </a>
+          
+          <div class="pt-4">
+            <a href="/#contact" class="bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline transition-colors duration-300">
+              Get Free Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-800 mb-4">Privacy Policy</h1>
+        <p class="text-xl text-gray-600">How we handle your information at Pressure Perfect</p>
+        <p class="text-sm text-gray-500 mt-2">Last updated: July 2025</p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+          <h2 class="text-xl font-semibold text-blue-800 mb-2">The Simple Version</h2>
+          <p class="text-blue-700 mb-0">We're Alex and Mateo - two local high school students who clean driveways in Apex. We only use your info to schedule your cleaning and send you updates. We don't sell your data or do anything weird with it. That's it!</p>
+        </div>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">What Information We Collect</h2>
+          <p class="text-gray-600 mb-4">When you request a quote, we collect:</p>
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li><strong>Contact info:</strong> Your name, phone number, and email (if you provide it)</li>
+            <li><strong>Service details:</strong> What type of cleaning you need and any special requests</li>
+            <li><strong>Location:</strong> Your address so we can come clean your driveway</li>
+            <li><strong>Communication preferences:</strong> Whether you agree to receive texts and emails from us</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">How We Use Your Information</h2>
+          <p class="text-gray-600 mb-4">We use your info to:</p>
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li>Schedule your driveway cleaning appointment</li>
+            <li>Send you updates about your service</li>
+            <li>Answer any questions you have</li>
+            <li>Send you a quote and follow up if needed</li>
+            <li>Occasionally let you know about special deals (but only if you're cool with it)</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">What We DON'T Do</h2>
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+            <ul class="list-disc pl-6 text-green-800 space-y-2 mb-0">
+              <li><strong>We don't sell your information.</strong> Period. We're teenagers, not a data broker.</li>
+              <li><strong>We don't spam you.</strong> We'll only contact you about your cleaning or if you specifically asked us to.</li>
+              <li><strong>We don't share with random companies.</strong> Your info stays with us unless we legally have to share it (which would be super weird for a driveway cleaning business).</li>
+              <li><strong>We don't store payment info.</strong> Any payments go through secure processors - we never see your card details.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Text Messages & Emails</h2>
+          <p class="text-gray-600 mb-4">If you check the box on our form, you're agreeing to let us:</p>
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li>Text you about your appointment (way easier than playing phone tag!)</li>
+            <li>Email you confirmations and updates</li>
+            <li>Maybe send you a special deal once in a while</li>
+          </ul>
+          <p class="text-gray-600 mt-4">Don't want texts anymore? Just reply "STOP" to any message. Don't want emails? Hit the unsubscribe link. Easy!</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">How We Protect Your Info</h2>
+          <p class="text-gray-600 mb-4">We take basic security seriously:</p>
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li>Your form submissions are encrypted when they come to us</li>
+            <li>We don't leave customer lists lying around</li>
+            <li>Only Alex and Mateo have access to customer information</li>
+            <li>We use secure services for our website and email</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Your Rights</h2>
+          <p class="text-gray-600 mb-4">Want to know what info we have about you? Want us to delete it? Just ask! You can:</p>
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li>Request a copy of what information we have</li>
+            <li>Ask us to update incorrect info</li>
+            <li>Tell us to delete your information entirely</li>
+            <li>Opt out of marketing messages anytime</li>
+          </ul>
+          <p class="text-gray-600 mt-4">Just call or text us at <a href="tel:+19198733300" class="text-[#2ea4d3] hover:underline">(919) 873-3300</a> - we're pretty easy to reach!</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Changes to This Policy</h2>
+          <p class="text-gray-600">If we ever need to update this policy, we'll post the new version here and update the date at the top. Since we're a simple local business, we don't expect many changes!</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Questions?</h2>
+          <p class="text-gray-600 mb-4">Got questions about privacy or how we handle your info? We're happy to chat!</p>
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <p class="text-gray-700 mb-2"><strong>Call or text:</strong> <a href="tel:+19198733300" class="text-[#2ea4d3] hover:underline">(919) 873-3300</a></p>
+            <p class="text-gray-700 mb-2"><strong>Email:</strong> Just use the contact form on our <a href="/#contact" class="text-[#2ea4d3] hover:underline">main page</a></p>
+            <p class="text-gray-700 mb-0"><strong>In person:</strong> We're around Apex - probably cleaning a driveway somewhere!</p>
+          </div>
+        </section>
+
+        <div class="border-t border-gray-200 pt-8 mt-12">
+          <p class="text-center text-gray-500 text-sm">
+            Thanks for trusting Pressure Perfect with your driveway cleaning needs!<br>
+            - Alex & Mateo
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="/logo.png" alt="Pressure Perfect" class="h-12 w-auto" />
+            <span class="text-2xl font-display font-bold">Pressure Perfect</span>
+          </div>
+          <p class="text-gray-300 mb-6 max-w-md">
+            Professional driveway and concrete cleaning services by local high school students Alex & Mateo. 
+            Reliable, affordable, and committed to making Apex neighborhoods look their best.
+          </p>
+          <div class="flex space-x-6">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-gray-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              <span class="text-gray-300">(919) 873-3300</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-gray-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-300">Apex, NC</span>
+            </div>
+            
+            <div class="pt-4">
+              <a href="/#contact" class="bg-[#2ea4d3] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2593b8] text-sm shadow-lg no-underline btn-hover inline-block text-center">
+                Get Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-sm text-gray-400 mb-4 md:mb-0">
+            &copy; 2025 Pressure Perfect. All rights reserved.
+          </div>
+          <div class="flex space-x-8 text-sm md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+            <a href="/#service-area" class="text-gray-400 hover:text-blue-400 transition-colors underline-offset-4 hover:underline">Service Area</a>
+            <a href="/#about" class="text-gray-400 hover:text-blue-400 transition-colors underline-offset-4 hover:underline">About Us</a>
+            <a href="/privacy" class="text-blue-400 underline underline-offset-4">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on navigation links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .btn-hover:hover {
+      transform: translateY(-1px);
+    }
+    
+    .nav-underline {
+      transition: width 0.3s ease;
+    }
+
+    .prose h2 {
+      color: #374151;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .prose p {
+      margin-bottom: 1rem;
+    }
+    
+    .prose ul {
+      margin-bottom: 1rem;
+    }
+  </style>
+</Layout>
