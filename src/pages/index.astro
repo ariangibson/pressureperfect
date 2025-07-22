@@ -384,6 +384,15 @@ import Layout from '../layouts/Layout.astro';
     html {
       scroll-behavior: smooth;
     }
+
+    /* Summer badge responsive positioning */
+    @media (min-width: 820px) {
+      #summer-badge {
+        top: 5rem !important;
+        right: 1rem !important;
+        left: auto !important;
+      }
+    }
     
     /* Card hover animations */
     .card-hover {
@@ -628,14 +637,14 @@ import Layout from '../layouts/Layout.astro';
     </div>
     
     <!-- Summer Special Badge Container -->
-    <div class="absolute inset-0 z-40 pointer-events-none">
+    <div class="absolute inset-0 z-[110] pointer-events-none">
       <div class="max-w-[1360px] mx-auto h-full relative">
-        <div id="summer-badge" class="absolute top-28 sm:top-20 left-1/2 sm:right-4 sm:left-auto transform -translate-x-1/2 sm:translate-x-0 pointer-events-auto" style="display: none;">
+        <div id="summer-badge" class="absolute top-4 left-6 sm:top-20 sm:right-4 sm:left-auto pointer-events-auto z-[100]" style="display: none;">
           <a href="#contact" class="block cursor-pointer">
             <img 
               src="/summer_special_25.png" 
               alt="Summer Special $99 Townhouse Driveway Cleaning" 
-              class="w-44 sm:w-52 md:w-60 lg:w-68 xl:w-76 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 block"
+              class="w-32 sm:w-52 md:w-60 lg:w-68 xl:w-76 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 block"
               style="aspect-ratio: 1/1;"
             >
           </a>
@@ -1346,7 +1355,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex items-start space-x-3">
               <input type="checkbox" id="sms-consent" name="smsConsent" class="mt-1 h-4 w-4 text-[#2ea4d3] focus:ring-[#2ea4d3] border-gray-300 rounded" required>
               <label for="sms-consent" class="text-sm text-gray-600 leading-5">
-                I agree to receive text messages and emails from Pressure Perfect for appointment scheduling, service updates, and transactional communications. Message and data rates may apply. Reply STOP to opt out of texts or unsubscribe from emails.
+                By checking this box, I consent to receive transactional messages related to my account, orders, or services I have requested. These messages may include appointment reminders, order confirmations, and account notifications among others. Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
               </label>
             </div>
             
@@ -1354,6 +1363,16 @@ import Layout from '../layouts/Layout.astro';
               <span id="submit-text">Get Free Quote</span>
               <span id="submit-loading" class="hidden">Sending...</span>
             </button>
+            
+            <!-- Legal Links -->
+            <div class="text-center mt-4">
+              <p class="text-xs text-gray-500">
+                By submitting this form, you agree to our 
+                <a href="/terms" class="text-[#2ea4d3] hover:underline">Terms of Service</a>
+                and 
+                <a href="/privacy" class="text-[#2ea4d3] hover:underline">Privacy Policy</a>
+              </p>
+            </div>
           </form>
           </div>
           
