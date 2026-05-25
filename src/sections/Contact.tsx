@@ -50,32 +50,30 @@ export default function Contact() {
     e.preventDefault()
     setSubmitting(true)
 
-    const payload = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      service: formData.service,
-      details: formData.details,
-      timestamp: new Date().toISOString(),
-      source: 'Pressure Perfect Website',
-    }
+    // Build FormSubmit payload with email subject
+    const formBody = new FormData()
+    formBody.append('First Name', formData.firstName)
+    formBody.append('Last Name', formData.lastName)
+    formBody.append('Email', formData.email)
+    formBody.append('Phone', formData.phone)
+    formBody.append('Service', formData.service)
+    formBody.append('Details', formData.details)
+    formBody.append('_subject', `New Quote Request from ${formData.firstName} ${formData.lastName}`)
+    formBody.append('_template', 'table')
 
     try {
-      const res = await fetch('https://n8n.ariangibson.com/webhook/ppform', {
+      const res = await fetch('https://formsubmit.co/hello@pressureperfectco.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: formBody,
       })
 
-      if (res.ok) {
+      if (res.ok || res.redirected) {
         setSubmitted(true)
       } else {
         throw new Error(`HTTP ${res.status}`)
       }
     } catch {
-      // Fallback: still show success locally even if webhook fails
-      // (so the user doesn't get stuck on error)
+      // Show success even if email fails so user isn't stuck
       setSubmitted(true)
     } finally {
       setSubmitting(false)
