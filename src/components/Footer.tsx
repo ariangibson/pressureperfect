@@ -10,7 +10,6 @@ const footerServices = [
 const footerLinks = [
   { label: 'Service Area', href: '#service-area' },
   { label: 'About Us', href: '#about' },
-  { label: 'Privacy Policy', href: '#' },
 ]
 
 export default function Footer() {
