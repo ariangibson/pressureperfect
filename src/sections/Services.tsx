@@ -21,10 +21,10 @@ const services = [
   {
     title: 'Ground-Level Concrete',
     description:
-      'Patios, pool decks, and other concrete surfaces. All work performed safely at ground level.',
+      'Patios and other concrete surfaces. All work performed safely at ground level.',
     icon: LayoutGrid,
     gradient: 'from-purple-50 to-white',
-    features: ['Concrete Patios', 'Pool Decks', 'Ground-Level Surfaces', 'Safety-First Approach'],
+    features: ['Concrete Patios', 'Ground-Level Surfaces', 'Safety-First Approach'],
   },
 ]
 
