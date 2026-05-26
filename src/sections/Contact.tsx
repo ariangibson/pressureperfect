@@ -252,11 +252,11 @@ export default function Contact() {
                   </button>
                   <p className="text-xs text-gray-400 text-center mt-4">
                     By submitting this form, you agree to our{' '}
-                    <a href="#" className="text-pp-teal hover:underline">
+                    <a href="#terms" className="text-pp-teal hover:underline">
                       Terms of Service
                     </a>{' '}
                     and{' '}
-                    <a href="#" className="text-pp-teal hover:underline">
+                    <a href="#privacy" className="text-pp-teal hover:underline">
                       Privacy Policy
                     </a>
                   </p>
