@@ -10,20 +10,15 @@ const footerServices = [
 const footerLinks = [
   { label: 'Service Area', href: '#service-area' },
   { label: 'About Us', href: '#about' },
-  { label: 'Privacy Policy', href: '#privacy' },
+  { label: 'Privacy Policy', href: '/privacy.html', external: true },
 ]
 
 export default function Footer() {
-  const handleClick = (e: React.MouseEvent, href: string) => {
-    // For legal pages (terms, privacy), let the hashchange router handle it
-    if (href === '#terms' || href === '#privacy') {
-      window.location.hash = href.replace('#', '')
-      return
+  const handleClick = (href: string) => {
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
     }
-    // For section anchors, smooth scroll
-    e.preventDefault()
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -58,7 +53,10 @@ export default function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    onClick={(e) => handleClick(e, item.href)}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleClick(item.href)
+                    }}
                     className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <Droplets className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
@@ -88,7 +86,10 @@ export default function Footer() {
               <div className="pt-2">
                 <a
                   href="#contact"
-                  onClick={(e) => handleClick(e, '#contact')}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleClick('#contact')
+                  }}
                   className="inline-block bg-pp-teal-light text-white px-6 py-3 rounded-full font-semibold hover:bg-pp-teal-dark transition-all duration-300 text-sm shadow-lg hover:shadow-xl"
                 >
                   Get Free Quote
@@ -107,7 +108,12 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => handleClick(e, link.href)}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                  onClick={link.external ? undefined : (e) => {
+                    e.preventDefault()
+                    handleClick(link.href)
+                  }}
                   className="text-gray-500 hover:text-pp-teal transition-colors duration-300"
                 >
                   {link.label}
