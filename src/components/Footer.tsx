@@ -7,12 +7,6 @@ const footerServices = [
   { label: 'View Pricing', href: '#pricing' },
 ]
 
-const footerLinks = [
-  { label: 'Service Area', href: '#service-area' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Privacy Policy', href: '/privacy.html', external: true },
-]
-
 export default function Footer() {
   const handleClick = (href: string) => {
     if (href.startsWith('#')) {
@@ -103,23 +97,6 @@ export default function Footer() {
         <div className="border-t border-gray-700/50 pt-8">
           <div className="flex flex-col md:flex-row md:justify-between items-center gap-4">
             <div className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Pressure Perfect. All rights reserved.</div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.external ? '_blank' : undefined}
-                  rel={link.external ? 'noopener noreferrer' : undefined}
-                  onClick={link.external ? undefined : (e) => {
-                    e.preventDefault()
-                    handleClick(link.href)
-                  }}
-                  className="text-gray-500 hover:text-pp-teal transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
             <div className="text-gray-600 text-xs">Built with care in Apex, NC</div>
           </div>
         </div>

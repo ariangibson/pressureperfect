@@ -250,16 +250,6 @@ export default function Contact() {
                       'Get Free Quote'
                     )}
                   </button>
-                  <p className="text-xs text-gray-400 text-center mt-4">
-                    By submitting this form, you agree to our{' '}
-                    <a href="/terms.html" target="_blank" rel="noopener noreferrer" className="text-pp-teal hover:underline">
-                      Terms of Service
-                    </a>{' '}
-                    and{' '}
-                    <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-pp-teal hover:underline">
-                      Privacy Policy
-                    </a>
-                  </p>
                 </div>
               </form>
             ) : (
