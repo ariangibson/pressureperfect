@@ -10,7 +10,7 @@ Professional driveway and sidewalk cleaning in Apex, NC by local students Alex &
 - **Scroll-triggered animations** using Intersection Observer API
 - **Responsive navigation** with active section tracking
 - **Modern glassmorphic design** with teal accent color scheme
-- **Live contact form** connected to webhook for quote requests
+- **Live contact form** connected to email for quote requests
 - **Google Maps embed** for service area visualization
 - **SEO optimized** with geo tags, Open Graph, and Twitter Cards
 
@@ -78,10 +78,7 @@ npm run preview
 
 ## Environment Variables
 
-No environment variables required for basic usage. The contact form submits to:
-```
-POST https://n8n.ariangibson.com/webhook/ppform
-```
+No environment variables required. The contact form submits to FormSubmit and sends an email to hello@pressureperfectco.com.
 
 ## License
 

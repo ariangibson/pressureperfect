@@ -2,9 +2,9 @@ import { useState, useEffect, useRef, FormEvent } from 'react'
 import { Phone, Mail, MapPin, CheckCircle2, Loader2 } from 'lucide-react'
 
 const contactInfo = [
-  { label: 'Phone', value: '(984) 232-9051', icon: Phone },
-  { label: 'Email', value: 'hello@pressureperfectco.com', icon: Mail },
-  { label: 'Location', value: 'Apex, NC', icon: MapPin },
+  { label: 'Phone', value: '(984) 232-9051', icon: Phone, href: 'tel:984-232-9051' },
+  { label: 'Email', value: 'hello@pressureperfectco.com', icon: Mail, href: 'mailto:hello@pressureperfectco.com' },
+  { label: 'Location', value: 'Apex, NC', icon: MapPin, href: null },
 ]
 
 const reasons = [
@@ -50,14 +50,14 @@ export default function Contact() {
     e.preventDefault()
     setSubmitting(true)
 
-    // Build FormSubmit payload with email subject
+    // Build FormSubmit payload with clearly labeled fields
     const formBody = new FormData()
     formBody.append('First Name', formData.firstName)
     formBody.append('Last Name', formData.lastName)
     formBody.append('Email', formData.email)
     formBody.append('Phone', formData.phone)
     formBody.append('Service', formData.service)
-    formBody.append('Details', formData.details)
+    formBody.append('Details', formData.details || 'No additional details provided')
     formBody.append('_subject', `New Quote Request from ${formData.firstName} ${formData.lastName}`)
     formBody.append('_template', 'table')
 
@@ -136,8 +136,8 @@ export default function Contact() {
               <div className="space-y-5">
                 {contactInfo.map((info) => {
                   const Icon = info.icon
-                  return (
-                    <div key={info.label} className="flex items-center space-x-4">
+                  const content = (
+                    <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-pp-teal rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-pp-teal/20">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
@@ -148,6 +148,17 @@ export default function Contact() {
                         <p className="text-gray-600 text-sm">{info.value}</p>
                       </div>
                     </div>
+                  )
+                  return info.href ? (
+                    <a
+                      key={info.label}
+                      href={info.href}
+                      className="block hover:opacity-80 transition-opacity"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={info.label}>{content}</div>
                   )
                 })}
               </div>
