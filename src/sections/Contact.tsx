@@ -46,7 +46,11 @@ export default function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const buildFormBody = () => {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setSubmitting(true)
+
+    // Build FormSubmit payload with clearly labeled fields
     const formBody = new FormData()
     formBody.append('First Name', formData.firstName)
     formBody.append('Last Name', formData.lastName)
@@ -56,30 +60,19 @@ export default function Contact() {
     formBody.append('Details', formData.details || 'No additional details provided')
     formBody.append('_subject', `New Quote Request from ${formData.firstName} ${formData.lastName}`)
     formBody.append('_template', 'table')
-    return formBody
-  }
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setSubmitting(true)
+    // Send copy to second email address
+    formBody.append('_cc', 'alexgibsonemail@gmail.com')
 
     try {
-      // Send to both email addresses in parallel
-      const [res1, res2] = await Promise.all([
-        fetch('https://formsubmit.co/hello@pressureperfectco.com', {
-          method: 'POST',
-          body: buildFormBody(),
-        }),
-        fetch('https://formsubmit.co/alexgibsonemail@gmail.com', {
-          method: 'POST',
-          body: buildFormBody(),
-        }),
-      ])
+      const res = await fetch('https://formsubmit.co/hello@pressureperfectco.com', {
+        method: 'POST',
+        body: formBody,
+      })
 
-      if ((res1.ok || res1.redirected) && (res2.ok || res2.redirected)) {
+      if (res.ok || res.redirected) {
         setSubmitted(true)
       } else {
-        throw new Error(`Email failed: ${res1.status}, ${res2.status}`)
+        throw new Error(`HTTP ${res.status}`)
       }
     } catch {
       // Show success even if email fails so user isn't stuck
