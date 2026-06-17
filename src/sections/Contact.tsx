@@ -64,16 +64,14 @@ export default function Contact() {
     formBody.append('_cc', 'alexgibsonemail@gmail.com')
 
     try {
-      const res = await fetch('https://formsubmit.co/hello@pressureperfectco.com', {
+      // Use no-cors mode since FormSubmit doesn't send CORS headers
+      // The request still sends, we just can't read the response
+      await fetch('https://formsubmit.co/hello@pressureperfectco.com', {
         method: 'POST',
+        mode: 'no-cors',
         body: formBody,
       })
-
-      if (res.ok || res.redirected) {
-        setSubmitted(true)
-      } else {
-        throw new Error(`HTTP ${res.status}`)
-      }
+      setSubmitted(true)
     } catch {
       // Show success even if email fails so user isn't stuck
       setSubmitted(true)
