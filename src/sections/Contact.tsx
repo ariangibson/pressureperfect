@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, FormEvent } from 'react'
-import { Phone, Mail, MapPin, CheckCircle2, Loader2 } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Phone, Mail, MapPin, CheckCircle2, MessageSquare } from 'lucide-react'
 
 const contactInfo = [
   { label: 'Phone', value: '(984) 232-9051', icon: Phone, href: 'tel:984-232-9051' },
@@ -15,22 +15,9 @@ const reasons = [
   'Eco-friendly cleaning methods and equipment',
 ]
 
-const INITIAL_FORM_STATE = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  service: '',
-  details: '',
-  consent: false,
-}
-
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [formData, setFormData] = useState(INITIAL_FORM_STATE)
-  const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,44 +32,6 @@ export default function Contact() {
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setSubmitting(true)
-
-    // Build FormSubmit payload with clearly labeled fields
-    const formBody = new FormData()
-    formBody.append('First Name', formData.firstName)
-    formBody.append('Last Name', formData.lastName)
-    formBody.append('Email', formData.email)
-    formBody.append('Phone', formData.phone)
-    formBody.append('Service', formData.service)
-    formBody.append('Details', formData.details || 'No additional details provided')
-    formBody.append('_subject', `New Quote Request from ${formData.firstName} ${formData.lastName}`)
-    formBody.append('_template', 'table')
-    // Send copy to second email address
-    formBody.append('_cc', 'alexgibsonemail@gmail.com')
-
-    try {
-      // Use no-cors mode since FormSubmit doesn't send CORS headers
-      // The request still sends, we just can't read the response
-      await fetch('https://formsubmit.co/hello@pressureperfectco.com', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formBody,
-      })
-      setSubmitted(true)
-    } catch {
-      // Show success even if email fails so user isn't stuck
-      setSubmitted(true)
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
-  const handleChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
 
   return (
     <section id="contact" ref={sectionRef} className="py-24 bg-white">
@@ -165,129 +114,42 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right side - Form */}
+          {/* Right side - CTA */}
           <div
-            className={`transition-all duration-700 ${
+            className={`flex flex-col justify-center transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
-            {!submitted ? (
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
-              >
-                <h3 className="text-2xl font-display font-bold text-gray-800 mb-6">
-                  Get a Free Estimate
-                </h3>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      required
-                      value={formData.firstName}
-                      onChange={(e) => handleChange('firstName', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      required
-                      value={formData.lastName}
-                      onChange={(e) => handleChange('lastName', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm"
-                    />
-                  </div>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    required
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm"
-                  />
-                  <select
-                    required
-                    value={formData.service}
-                    onChange={(e) => handleChange('service', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm bg-white"
-                  >
-                    <option value="">Select a Service</option>
-                    <option value="driveway">Driveway Cleaning</option>
-                    <option value="sidewalk">Sidewalk & Walkway Cleaning</option>
-                    <option value="ground-level">Ground-Level Concrete</option>
-                    <option value="multiple">Multiple Services</option>
-                  </select>
-                  <textarea
-                    placeholder="Tell us about your property..."
-                    rows={4}
-                    value={formData.details}
-                    onChange={(e) => handleChange('details', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-pp-teal focus:ring-2 focus:ring-pp-teal/20 outline-none transition-all text-sm resize-none"
-                  />
-                  <label className="flex items-start space-x-2 text-xs text-gray-500 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      required
-                      checked={formData.consent}
-                      onChange={(e) => handleChange('consent', e.target.checked)}
-                      className="mt-0.5 w-4 h-4 rounded border-gray-300 text-pp-teal focus:ring-pp-teal"
-                    />
-                    <span>
-                      By checking this box, I consent to receive transactional messages related to my
-                      account, orders, or services I have requested. Reply HELP for help or STOP to
-                      opt-out.
-                    </span>
-                  </label>
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full bg-pp-teal-light text-white px-6 py-4 rounded-full font-semibold hover:bg-pp-teal-dark transition-all duration-300 text-sm shadow-lg hover:shadow-xl disabled:opacity-60 flex items-center justify-center gap-2"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      'Get Free Quote'
-                    )}
-                  </button>
-                </div>
-              </form>
-            ) : (
-              /* Thank You State */
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-8 h-8 text-green-600" />
-                </div>
-                <h3 className="text-2xl font-display font-bold text-gray-800 mb-2">Thank You!</h3>
-                <p className="text-lg text-gray-600 mb-4">
-                  We really appreciate you reaching out to us.
-                </p>
-                <p className="text-gray-600 mb-6">
-                  Mateo and Alex will review your request and get back to you within 24 hours with a
-                  personalized quote.
-                </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
-                  <p className="text-sm text-blue-800">
-                    <strong>What's next?</strong> We'll call or text you to schedule a quick look at
-                    your driveway and provide an accurate estimate.
-                  </p>
-                </div>
-                <p className="text-sm text-gray-500">
-                  Have questions in the meantime? Feel free to call us: (984) 232-9051
-                </p>
+            <div className="bg-gradient-to-br from-pp-teal to-pp-teal-light rounded-3xl p-8 shadow-xl text-white text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MessageSquare className="w-8 h-8 text-white" />
               </div>
-            )}
+              <h3 className="text-2xl font-display font-bold mb-4">
+                Get Your Free Quote
+              </h3>
+              <p className="text-white/90 mb-8 leading-relaxed">
+                We would love to hear from you! Reach out by phone or email and we will get back to you with a personalized estimate.
+              </p>
+              <div className="space-y-4">
+                <a
+                  href="tel:984-232-9051"
+                  className="flex items-center justify-center gap-3 w-full bg-white text-pp-teal px-6 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-sm shadow-lg"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call (984) 232-9051
+                </a>
+                <a
+                  href="mailto:hello@pressureperfectco.com"
+                  className="flex items-center justify-center gap-3 w-full bg-white/20 text-white px-6 py-4 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 text-sm border border-white/30"
+                >
+                  <Mail className="w-5 h-5" />
+                  Email Us
+                </a>
+              </div>
+              <p className="text-white/70 text-sm mt-6">
+                Available Monday - Saturday, 8am - 6pm
+              </p>
+            </div>
           </div>
         </div>
       </div>
